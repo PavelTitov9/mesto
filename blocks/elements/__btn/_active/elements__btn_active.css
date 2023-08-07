@@ -1,0 +1,6 @@
+.elements__btn_active{
+    background-image: url(../../../../images/buttons/Union.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

@@ -6,13 +6,11 @@
     margin: 0;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     border: none;
     background-color: #ffffff;
     cursor: pointer;
 }
 .elements__btn:hover{
     opacity: 60%;
-}
-.elements__btn:active{
-    background-image: url(../../../images/buttons/Union.svg);
 }

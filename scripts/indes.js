@@ -7,6 +7,15 @@ let nameInput =document.querySelector('.popup__input_type_name');
 let jobInput =document.querySelector('.popup__input_type_about');
 let name =document.querySelector('.profile__name');
 let job =document.querySelector('.profile__bio');
+let likes =document.querySelectorAll('.elements__btn');
+
+
+for (let index = 0; index < likes.length; index++) {
+    const element = likes[index];
+    element.addEventListener('click',function(evt){
+           evt.target.classList.toggle('elements__btn_active');
+        })
+}
 
 function toggle(){
     if (popup.style.display ==='none'|| popup.style.display===''){
