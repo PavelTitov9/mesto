@@ -1,0 +1,9 @@
+.profile__menu{
+    display: flex;
+    gap: 18px;
+}
+@media screen and (max-width:550px){
+    .profile__menu{
+        gap: 10px;
+    }
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./pages/index.css">
+    <title>Mesto</title>
+</head>
+<body class="root">
+    <header class="header">
+        <img src="./images/logo.svg" class="header__logo" alt="Логотип проекта">
+    </header>
+    <main class="page">
+        <section class="profile">
+            <img src="./images/Avatar.png" class="profile__avatar" alt="Фото профиля">
+            <div class="profile__info">
+                <div class="profile__menu">
+                    <h1 class="profile__name">Жак-Ив Кусто</h1>
+                    <button type="button" title="Popup open button" class="profile__open"></button>
+                </div>
+                <p class="profile__bio">Исследователь океана</p>
+            </div>
+            <div class="profile__flex-btn">
+                <button type="button" title="Share profile" class="profile__btn"></button>
+            </div>
+        </section>
+        <section class="elements">
+            <div class="elements__card">
+                <img class="elements__image" src="./images/dombai.png" alt="Дорога к горе">
+                <div class="elements__title">
+                    <h2 class="elements__name">Домбай</h2>
+                    <button class="elements__btn" type="button" title="Like"></button>
+                </div>
+            </div>
+            <div class="elements__card">
+                <img class="elements__image" src="./images/elbrus.png" alt="Эльбрус">
+                <div class="elements__title">
+                    <h2 class="elements__name">Гора Эльбрус</h2>
+                    <button class="elements__btn" type="button" title="Like"></button>
+                </div>
+            </div>
+            <div class="elements__card">
+                <img class="elements__image" src="./images/erevan.png" alt="Город">
+                <div class="elements__title">
+                    <h2 class="elements__name">Ереван</h2>
+                    <button class="elements__btn" type="button" title="Like"></button>
+                </div>
+            </div>
+            <div class="elements__card">
+                <img class="elements__image" src="./images/ivanovo.png" alt="Улица">
+                <div class="elements__title">
+                    <h2 class="elements__name">Иваново</h2>
+                    <button class="elements__btn" type="button" title="Like"></button>
+                </div>
+            </div>
+            <div class="elements__card">
+                <img class="elements__image" src="./images/karachaevo.png" alt="Домик">
+                <div class="elements__title">
+                    <h2 class="elements__name">Карачаевск</h2>
+                    <button class="elements__btn" type="button" title="Like"></button>
+                </div>
+            </div>
+            <div class="elements__card">
+                <img class="elements__image" src="./images/karachaevsk.png" alt="Церковь на горе">
+                <div class="elements__title">
+                    <h2 class="elements__name">Карачаево-Черкессия</h2>
+                    <button class="elements__btn" type="button" title="Like"></button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p class="footer__copy">&copy 2023 Mesto Russia</p>
+    </footer>
+    <div class="popup">
+        <div class="popup__conteiner">
+            <button type="button" class="popup__close"></button>
+            <form class="popup__form" name="form-open">
+                <h2 class="popup__title">Редактировать профиль</h2>
+                <input type="text" class="popup__input popup__input_type_name" placeholder="Имя">
+                <input type="text" class="popup__input popup__input_type_about" placeholder="О себе">
+                <button type="submit" class="popup__btn">Сохранить</button>
+            </form>
+        </div>    
+    </div>
+    <script src="./scripts/indes.js"></script>
+</body>
+</html>

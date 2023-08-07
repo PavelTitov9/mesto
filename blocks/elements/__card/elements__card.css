@@ -1,0 +1,11 @@
+.elements__card{
+    width: 282px;
+    margin: 0;
+    border-radius: 10px;
+    background-color: #ffffff;
+    background-size: cover;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
