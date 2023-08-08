@@ -1,16 +1,17 @@
-.elements__btn{
-    width: 22px;
-    height: 19px;
-    background-image: url(../../../images/buttons/Vector2.svg);
-    padding: 0;
-    margin: 0;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border: none;
-    background-color: #ffffff;
-    cursor: pointer;
+.elements__btn {
+  width: 22px;
+  height: 19px;
+  background-image: url(../../../images/buttons/Vector2.svg);
+  padding: 0;
+  margin: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  cursor: pointer;
 }
-.elements__btn:hover{
-    opacity: 60%;
+
+.elements__btn:hover {
+  opacity: 50%;
 }

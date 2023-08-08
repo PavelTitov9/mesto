@@ -1,20 +1,28 @@
-.profile__open{
-    width: 24px;
-    height: 24px;
-    border: 1px solid #ffffff;
-    background-image: url(../../../images/buttons/Edit_Button.svg);
-    background-color: black;
-    background-position: center;
-    align-self: center;
-    cursor: pointer;
-    padding: 0;
+.profile__open {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #ffffff;
+  background-image: url(../../../images/buttons/Vectoropen.svg);
+  background-color: black;
+  background-position: center;
+  background-repeat: no-repeat;
+  align-self: center;
+  cursor: pointer;
+  padding: 0;
+  background-size: 10px;
 }
-.profile__open:hover{
-    opacity: 60%;
+
+.profile__open:hover {
+  opacity: 60%;
 }
-@media screen and (max-width:550px){
-    .profile__open{
-        width: 18px;
-        height: 18px;
+
+@media screen and (max-width:670px) {
+    .profile__open {
+      width: 18px;
+      height: 18px;
+      background-size: 7.5px;
+      position: absolute;
+      right: -26px;
+      top: 5px;
     }
-}
+}  

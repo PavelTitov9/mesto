@@ -1,9 +1,12 @@
-.profile__menu{
-    display: flex;
-    gap: 18px;
+.profile__menu {
+  display: flex;
+  gap: 18px;
+  max-width: 336px;
+  position: relative;
 }
-@media screen and (max-width:550px){
-    .profile__menu{
-        gap: 10px;
+
+@media screen and (max-width:670px) {
+    .profile__menu {
+      max-width: 282px;
     }
 }

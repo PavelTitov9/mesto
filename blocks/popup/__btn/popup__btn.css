@@ -1,26 +1,28 @@
-.popup__btn{
-    width: 358px;
-    height: 50px;
-    background-color: black;
-    color: #FFFFFF;
-    cursor: pointer;
-    border: none;
-    border-radius: 2px;
-    margin: 18px auto 37px;
-    font-family: 'Inter', 'Arial', sans-serif;
-    font-size: 18px;
-    line-height: 20px;
-    font-weight: 400;
-    padding: 0;
+.popup__btn {
+  max-width: 358px;
+  width: 100%;
+  padding: 15px 0 15px 0;
+  background-color: black;
+  color: #FFFFFF;
+  cursor: pointer;
+  border: none;
+  border-radius: 2px;
+  margin: 18px auto 37px;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 400;
+}  
+
+.popup__btn:hover {
+  opacity: 80%;
 }
-.popup__btn:hover{
-    opacity: 60%;
-}
-@media screen and (max-width:550px){
-    .popup__btn{
-        width: 238px;
-        height: 46px;
-        font-size: 14px;
-        margin: 15px auto 25px;
+
+@media screen and (max-width:550px) {
+    .popup__btn {
+      max-width: 238px;
+      padding: 13px 0 13px 0;
+      font-size: 14px;
+      margin: 15px auto 25px;
     }
 }
