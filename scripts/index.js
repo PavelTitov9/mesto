@@ -16,17 +16,11 @@ for (let index = 0; index < elementsLike.length; index++) {
         })
 }
 
-function togglePopup(){
-    if (popup.style.display ==='none'|| popup.style.display===''){
+function togglePopup() {
         nameInput.value=profileName.textContent;
         jobInput.value=profileJob.textContent;
-        popup.style.display='flex';
-        popup.classList.add('popup_active')
-    }else{
-        popup.style.display='none';
+        popup.classList.toggle('popup_opened');
     }
-    
-}
 
 function handleFormSubmit (evt) {
     evt.preventDefault(); 
