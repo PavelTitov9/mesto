@@ -40,11 +40,17 @@
     <div class="popup popup_edit">
         <div class="popup__container">
             <button type="button" class="popup__close"></button>
-            <form class="popup__form popup__form-edit" name="form-open" id="">
+            <form class="popup__form popup__form-edit" name="form-open" >
                 <h2 class="popup__title">Редактировать профиль</h2>
-                <input type="text" class="popup__input popup__input_type_name" placeholder="Имя">
-                <input type="text" class="popup__input popup__input_type_about" placeholder="О себе">
-                <button type="submit" class="popup__btn">Сохранить</button>
+                <fieldset class="popup__fieldset">
+                    <input id="profile-name" type="text" class="popup__input popup__input_type_name" placeholder="Имя" required
+                    minlength="2" maxlength="40">
+                    <span id="profile-name-error" class="popup__input-error"></span>
+                    <input id="profile-info" type="text" class="popup__input popup__input_type_about" placeholder="О себе" required 
+                    minlength="2" maxlength="200">
+                    <span id="profile-info-error" class="popup__input-error"></span>
+                    <button type="submit" class="popup__btn" disabled>Сохранить</button>
+                </fieldset>
             </form>
         </div>
     </div>
@@ -54,9 +60,15 @@
             <button type="button" class="popup__close popup__close-add"></button>
             <form class="popup__form popup__form-add" name="form-open">
                 <h2 class="popup__title">Новое место</h2>
-                <input type="text" class="popup__input popup__input_type_name-img" placeholder="Название">
-                <input type="url" class="popup__input popup__input_type_img" placeholder="Ссылка на картинку">
-                <button type="submit" class="popup__btn popup__btn-add">Создать</button>
+                <fieldset class="popup__fieldset">
+                    <input id="mesto-input" type="text" class="popup__input popup__input_type_name-img" placeholder="Название" required 
+                    minlength="2" maxlength="30">
+                    <span id="mesto-input-error" class="popup__input-error"></span>
+                    <input id="link-input" type="url" class="popup__input popup__input_type_img" placeholder="Ссылка на картинку" 
+                    required>
+                    <span id="link-input-error" class="popup__input-error"></span>
+                    <button type="submit" class="popup__btn popup__btn-add" disabled>Создать</button>
+                </fieldset>
             </form>
         </div>
     </div>
@@ -81,6 +93,7 @@
     </template>
 
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validation.js"></script>
 
 </body>
 

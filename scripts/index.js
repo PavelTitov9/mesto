@@ -21,6 +21,7 @@ const cardsContainer= document.querySelector('.elements');
 const cardFormopen= document.querySelector('.profile__btn');
 const popupImgName = document.querySelector('.popup__input_type_name-img');
 
+
 const initialCards = [{
   name: 'Архыз',
   link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
@@ -88,14 +89,31 @@ initialCards.forEach((item)=>{
   const card = createCard(item.name, item.link)
   addCard(card)
 })
-
-
-function openPopup(popupEdit) {
-  popupEdit.classList.add('popup_opened');
+function openPopup(popup) {
+  popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closePopupFull)
+  popup.addEventListener('click', closePopupOverlay)
 }
 
-function closePopup(popupEdit) {
-  popupEdit.classList.remove('popup_opened');
+function closePopup(popup) {
+  popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closePopupFull)
+  popup.removeEventListener('click', closePopupOverlay)
+}
+
+
+
+function closePopupFull(evt) {
+  if (evt.key === "Escape") {
+    const popupOpened = document.querySelector('.popup_opened');
+    closePopup(popupOpened);
+  }
+}
+
+function closePopupOverlay(evt) {
+  if (evt.currentTarget === evt.target) {
+    closePopup(evt.currentTarget)
+  }
 }
 
 function openProfilePopup() {
@@ -111,14 +129,16 @@ function handleProfileFormSubmit (evt) {
     evt.preventDefault(); 
     profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value; 
-    openProfilePopup();
+    closeProfilePopup();
 }
 
 const openPopupAddImg = () =>{
   openPopup(popupAdd)
+ 
 }
 const closePopupAddImg = () =>{
   closePopup(popupAdd)
+  
 }
 const addNewCard = (event) =>{
   event.preventDefault()
@@ -131,10 +151,10 @@ const addNewCard = (event) =>{
   closePopup(popupAdd)
 }
 
+
 profileEditDialogButton.addEventListener('click',openProfilePopup);
 popupCloseButton.addEventListener('click',closeProfilePopup);
 profileButtonAdd.addEventListener('click',openPopupAddImg);
 formAdd.addEventListener('submit', addNewCard);
 buttonCardClose.addEventListener('click',closePopupAddImg);
 profileFormElement.addEventListener('submit', handleProfileFormSubmit);
-

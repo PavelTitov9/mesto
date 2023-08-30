@@ -1,13 +1,13 @@
 .popup__btn {
   max-width: 358px;
   width: 100%;
-  padding: 15px 0 15px 0;
+  padding: 14px 0 14px 0;
   background-color: black;
   color: #FFFFFF;
   cursor: pointer;
   border: none;
   border-radius: 2px;
-  margin: 18px auto 37px;
+  margin: 16px auto 37px;
   font-family: 'Inter', 'Arial', sans-serif;
   font-size: 18px;
   line-height: 20px;
