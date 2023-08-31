@@ -63,9 +63,6 @@ const createCard = (name, link) => {
     imgName.textContent = name
     imgScreen.alt = name
   })
-  imgCloseButton.addEventListener('click', () =>{
-    closePopup(popupImage)
-  })
 
   deleteBtn.addEventListener('click', () =>{
     card.remove()
@@ -101,7 +98,9 @@ function closePopup(popup) {
   popup.removeEventListener('click', closePopupOverlay);
 }
 
-
+imgCloseButton.addEventListener('click', () =>{
+  closePopup(popupImage)
+})
 
 function closePopupFull(evt) {
   if (evt.key === "Escape") {
@@ -135,6 +134,7 @@ function handleProfileFormSubmit (evt) {
 const openPopupAddImg = () =>{
   openPopup(popupAdd);
   buttonCard.classList.add('popup__btn_inactive');
+  buttonCard.setAttribute('disabled','disabled');
 }
 const closePopupAddImg = () =>{
   closePopup(popupAdd)
