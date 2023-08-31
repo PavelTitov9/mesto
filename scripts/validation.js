@@ -73,7 +73,7 @@ enableValidation({
     return !inputElement.validity.valid;
   }); 
 }
-  
+
 function toggleButtonState(inputList,buttonForms){
     if (hasInvalidInput(inputList)) {
     buttonForms.disabled = true;

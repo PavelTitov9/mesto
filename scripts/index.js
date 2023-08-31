@@ -91,14 +91,14 @@ initialCards.forEach((item)=>{
 })
 function openPopup(popup) {
   popup.classList.add('popup_opened');
-  document.addEventListener('keydown', closePopupFull)
-  popup.addEventListener('click', closePopupOverlay)
+  document.addEventListener('keydown', closePopupFull);
+  popup.addEventListener('click', closePopupOverlay);
 }
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
-  document.removeEventListener('keydown', closePopupFull)
-  popup.removeEventListener('click', closePopupOverlay)
+  document.removeEventListener('keydown', closePopupFull);
+  popup.removeEventListener('click', closePopupOverlay);
 }
 
 
@@ -133,12 +133,11 @@ function handleProfileFormSubmit (evt) {
 }
 
 const openPopupAddImg = () =>{
-  openPopup(popupAdd)
- 
+  openPopup(popupAdd);
+  buttonCard.classList.add('popup__btn_inactive');
 }
 const closePopupAddImg = () =>{
   closePopup(popupAdd)
-  
 }
 const addNewCard = (event) =>{
   event.preventDefault()
