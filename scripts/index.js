@@ -1,3 +1,6 @@
+import {FormValidator, settingsObject} from './FormValidator.js';
+import {Card} from './Card.js'
+
 const profileEditDialogButton =document.querySelector('.profile__open');
 const profileButtonAdd =document.querySelector('.profile__btn');
 const popupEdit = document.querySelector('.popup_edit');
@@ -10,16 +13,13 @@ const popupAdd =document.querySelector('.popup_add');
 const inputUrlImage =document.querySelector('.popup__input_type_img');
 const buttonCard =document.querySelector('.popup__btn-add');
 const buttonCardClose =document.querySelector('.popup__close-add');
-const popupImage =document.querySelector('.popup_img');
-const imgScreen =document.querySelector('.popup__img-screen');
-const imgName =document.querySelector('.popup__img-name');
-const imgCloseButton =document.querySelector('.popup__btn-img');
+export const popupImage =document.querySelector('.popup_img');
+export const imgCloseButton =document.querySelector('.popup__btn-img');
 const profileName =document.querySelector('.profile__name');
 const profileJob =document.querySelector('.profile__bio');
-const elementsTemplate =document.querySelector('.elements__card-template').content;
-const cardsContainer= document.querySelector('.elements');
-const cardFormopen= document.querySelector('.profile__btn');
 const popupImgName = document.querySelector('.popup__input_type_name-img');
+const newCard = document.querySelector('.elements')
+
 
 
 const initialCards = [{
@@ -48,51 +48,13 @@ const initialCards = [{
 },
 ];
 
-const createCard = (name, link) => {
-  
-  const card = elementsTemplate.querySelector('.elements__card').cloneNode(true)
-
-  const img = card.querySelector('.elements__image')
-  const deleteBtn = card.querySelector('.elements__btn-delete')
-  const h2 = card.querySelector('.elements__name')
-  const likeBtn = card.querySelector('.elements__btn')
-
-  img.addEventListener('click', () =>{
-    openPopup(popupImage)
-    imgScreen.src = link
-    imgName.textContent = name
-    imgScreen.alt = name
-  })
-
-  deleteBtn.addEventListener('click', () =>{
-    card.remove()
-  })
-
-  likeBtn.addEventListener('click', () =>{
-    likeBtn.classList.toggle('elements__btn_active') 
-  })
-
-  h2.textContent = name
-  img.src = link
-  img.alt = name
-
-  return card
-}
-function addCard(card) {
-  cardsContainer.prepend(card);
-}
-
-initialCards.forEach((item)=>{
-  const card = createCard(item.name, item.link)
-  addCard(card)
-})
-function openPopup(popup) {
+export function openPopup(popup) {
   popup.classList.add('popup_opened');
   document.addEventListener('keydown', closePopupFull);
   popup.addEventListener('click', closePopupOverlay);
 }
 
-function closePopup(popup) {
+export function closePopup(popup) {
   popup.classList.remove('popup_opened');
   document.removeEventListener('keydown', closePopupFull);
   popup.removeEventListener('click', closePopupOverlay);
@@ -142,14 +104,33 @@ const closePopupAddImg = () =>{
 const addNewCard = (event) =>{
   event.preventDefault()
   const name = popupImgName.value
-  const img = inputUrlImage.value
-  const card = createCard(name, img)
-  addCard(card)
-  popupImgName.value =''
-  inputUrlImage.value =''
-  closePopup(popupAdd)
+  const link = inputUrlImage.value
+  
+  const newCardData = {
+    name , link,
+  };
+
+  renderCard(newCardData);
+  closePopup(popupAdd);
+  formAdd.reset();
+  closePopupAddImg(popupAdd);
+}
+const renderCard = (data) => {
+  const card = new Card(data, '.elements__card');
+  newCard.prepend(card.createCard());
 }
 
+initialCards.forEach((Element)=>{
+  renderCard(Element)
+})
+
+formAdd.addEventListener('submit',addNewCard)
+
+const formArray = Array.from(document.querySelectorAll('.popup__form'));
+
+formArray.forEach((formElement) => {
+  new FormValidator(settingsObject, formElement).enableValidation();
+});
 
 profileEditDialogButton.addEventListener('click',openProfilePopup);
 popupCloseButton.addEventListener('click',closeProfilePopup);
