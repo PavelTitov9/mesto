@@ -11,7 +11,6 @@ const jobInput =document.querySelector('.popup__input_type_about');
 const formAdd =document.querySelector('.popup__form-add');
 const popupAdd =document.querySelector('.popup_add');
 const inputUrlImage =document.querySelector('.popup__input_type_img');
-const buttonCard =document.querySelector('.popup__btn-add');
 const buttonCardClose =document.querySelector('.popup__close-add');
 export const popupImage =document.querySelector('.popup_img');
 export const imgCloseButton =document.querySelector('.popup__btn-img');
@@ -95,8 +94,6 @@ function handleProfileFormSubmit (evt) {
 
 const openPopupAddImg = () =>{
   openPopup(popupAdd);
-  buttonCard.classList.add('popup__btn_inactive');
-  buttonCard.setAttribute('disabled','disabled');
 }
 const closePopupAddImg = () =>{
   closePopup(popupAdd)
@@ -116,7 +113,7 @@ const addNewCard = (event) =>{
   closePopupAddImg(popupAdd);
 }
 const renderCard = (data) => {
-  const card = new Card(data, '.elements__card');
+  const card = new Card(data, '.elements__card-template');
   newCard.prepend(card.createCard());
 }
 

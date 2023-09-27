@@ -13,8 +13,6 @@ export const settingsObject = {
 export class FormValidator {
   constructor(settingsObject,formElement){
     this._formElement = formElement;
-    this._formSelector = settingsObject.formSelector;
-    this._fieldsetSelector = settingsObject.fieldsetSelector;
     this._inputSelector = settingsObject.inputSelector;
     this._submitButtonSelector = settingsObject.submitButtonSelector;
     this._inactiveButtonClass = settingsObject.inactiveButtonClass;
