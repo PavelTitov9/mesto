@@ -59,6 +59,14 @@ export function closePopup(popup) {
   popup.removeEventListener('click', closePopupOverlay);
 }
 
+const formArray = Array.from(document.querySelectorAll('.popup__form'));
+
+const profilePopup = new FormValidator(settingsObject, formArray[0]);
+const imagePopup = new FormValidator(settingsObject, formArray[1]);
+
+profilePopup.enableValidation()
+imagePopup.enableValidation()
+
 imgCloseButton.addEventListener('click', () =>{
   closePopup(popupImage)
 })
@@ -111,6 +119,8 @@ const addNewCard = (event) =>{
   closePopup(popupAdd);
   formAdd.reset();
   closePopupAddImg(popupAdd);
+  profilePopup.toggleButtonState()
+  imagePopup.toggleButtonState()
 }
 const renderCard = (data) => {
   const card = new Card(data, '.elements__card-template');
@@ -123,11 +133,7 @@ initialCards.forEach((Element)=>{
 
 formAdd.addEventListener('submit',addNewCard)
 
-const formArray = Array.from(document.querySelectorAll('.popup__form'));
 
-formArray.forEach((formElement) => {
-  new FormValidator(settingsObject, formElement).enableValidation();
-});
 
 profileEditDialogButton.addEventListener('click',openProfilePopup);
 popupCloseButton.addEventListener('click',closeProfilePopup);
